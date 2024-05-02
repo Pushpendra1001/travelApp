@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Popular Places for Travel",
+                child: Text("Popular places for Travel",
                     style: TextStyle(fontSize: 20)),
               ),
               SizedBox(

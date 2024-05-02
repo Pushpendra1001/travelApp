@@ -43,6 +43,8 @@ dependencies:
   staggered_grid_view_flutter: ^0.0.4
   shared_preferences: ^2.2.3
   provider: ^6.1.2
+  fluttertoast: ^8.2.5
+  gettext: ^1.2.0
 
 dev_dependencies:
   flutter_test:

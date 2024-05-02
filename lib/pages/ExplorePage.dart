@@ -21,7 +21,7 @@ class ExplorePage extends StatelessWidget {
           backgroundColor: Colors.white,
           title: Text('Explore Places'),
           actions: [
-            Text("Xyz User"),
+            Text("Hello User"),
             Padding(
               padding: EdgeInsets.only(right: 20, left: 10),
               child: CircleAvatar(

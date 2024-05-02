@@ -50,7 +50,9 @@ class PaymentPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Container(
                 height: 60,
                 width: double.infinity,

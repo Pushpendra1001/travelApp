@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travelling_app/pages/EditProfilePage.dart';
+import 'package:travelling_app/pages/ExpenseTracking.dart';
 import 'package:travelling_app/pages/ExplorePage.dart';
 import 'package:travelling_app/pages/historybooking.dart';
 import 'package:travelling_app/pages/login/signIn.dart';
@@ -18,11 +19,14 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Center(
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   radius: 64,
-                  backgroundColor: Colors.blue,
+                  child: Icon(
+                    Icons.person,
+                    size: 64,
+                  ),
                 ),
               ),
             ),
@@ -65,13 +69,25 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     const Divider(),
                     profileItem(
-                      icon: CupertinoIcons.money_dollar,
+                      icon: CupertinoIcons.app_badge_fill,
                       itemName: "Payment",
                       press: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => SelectUpiOption(),
+                            ));
+                      },
+                    ),
+                    const Divider(),
+                    profileItem(
+                      icon: CupertinoIcons.money_dollar,
+                      itemName: "Expense Tracking",
+                      press: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ExpenseTracking(),
                             ));
                       },
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:travelling_app/models/TripModel.dart';
@@ -82,18 +83,28 @@ class _TripPlanningPageState extends State<TripPlanningPage> {
             SizedBox(height: 16),
             InkWell(
               onTap: () {
-                var trip = Trip(
-                  startDate: _startDateController.text,
-                  endDate: _endDateController.text,
-                  priceRange: _priceRangeController.text,
-                  location: _locationController.text,
-                  destination: _destinationController.text,
-                  needHotel: _needHotel,
-                  needVehicle: _needVehicle,
-                  needGuide: _needGuide,
-                );
-                Provider.of<TripModel>(context, listen: false).addTrip(trip);
-                Navigator.pop(context);
+                if (_startDateController.text.isEmpty ||
+                    _endDateController.text.isEmpty ||
+                    _priceRangeController.text.isEmpty ||
+                    _locationController.text.isEmpty ||
+                    _destinationController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("All the Fields Are Required"),
+                  ));
+                } else {
+                  var trip = Trip(
+                    startDate: _startDateController.text,
+                    endDate: _endDateController.text,
+                    priceRange: _priceRangeController.text,
+                    location: _locationController.text,
+                    destination: _destinationController.text,
+                    needHotel: _needHotel,
+                    needVehicle: _needVehicle,
+                    needGuide: _needGuide,
+                  );
+                  Provider.of<TripModel>(context, listen: false).addTrip(trip);
+                  Navigator.pop(context);
+                }
               },
               child: Container(
                 height: 60,
