@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travelling_app/pages/CreateTripPage.dart';
 import 'package:travelling_app/pages/PaymentPage.dart';
+import 'package:travelling_app/pages/paymentOptionForTrip.dart';
 
 class LocationTripPage extends StatefulWidget {
   LocationTripPage({super.key, required this.data});
@@ -201,12 +202,7 @@ class _LocationTripPageState extends State<LocationTripPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PaymentPage(
-                          selectedGuides: [],
-                          selectedHotels: [],
-                          selectedVehicles: [],
-                        ),
-                      ));
+                          builder: (context) => PaymentOptionForTrip()));
                 },
                 child: Container(
                   height: 60,

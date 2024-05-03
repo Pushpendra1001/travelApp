@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:travelling_app/pages/PaymentPage.dart';
 
-class SelectUpiOption extends StatefulWidget {
-  const SelectUpiOption({super.key});
+class PaymentOptionForTrip extends StatefulWidget {
+  const PaymentOptionForTrip({super.key});
 
   @override
-  State<SelectUpiOption> createState() => _SelectUpiOptionState();
+  State<PaymentOptionForTrip> createState() => _PaymentOptionForTripState();
 }
 
-class _SelectUpiOptionState extends State<SelectUpiOption> {
+class _PaymentOptionForTripState extends State<PaymentOptionForTrip> {
   List selection = [false, false, false];
   @override
   Widget build(BuildContext context) {
@@ -154,7 +154,14 @@ class _SelectUpiOptionState extends State<SelectUpiOption> {
                                     BorderRadius.all(Radius.circular(16))),
                           ),
                           onPressed: () {
-                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PaymentPage(
+                                      selectedHotels: [],
+                                      selectedGuides: [],
+                                      selectedVehicles: []),
+                                ));
                           },
                           child: const Text(
                             "Done",

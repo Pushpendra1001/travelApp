@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/Common/bottomBar.dart';
+import 'package:travelling_app/pages/HomePage.dart';
 
 class PaymentPage extends StatelessWidget {
   final List<Map<String, dynamic>> selectedHotels;
@@ -51,7 +52,11 @@ class PaymentPage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: InkWell(
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomBar(),
+                    ));
               },
               child: Container(
                 height: 60,
